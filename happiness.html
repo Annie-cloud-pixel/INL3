@@ -12,35 +12,89 @@
 		var myChart = new Chart(ctx, {
 		    type: 'bar',
 		    data: {
-		        labels: ['Europa', 'Nodamerika', 'Sydamerika', 'Asien', 'Afrika'],
+		        labels: ['Europe', 'North America', 'South America', 'Asia', 'Africa'],
 		        datasets: [{
 		            label: 'Happiness',
 		            data: [6.603, 7.1555, 5.9781, 5.473, 4.952],
 		            backgroundColor: [
-		                'rgba(255, 99, 132, 0.2)',
-		                'rgba(54, 162, 235, 0.2)',
-		                'rgba(255, 206, 86, 0.2)',
-		                'rgba(75, 192, 192, 0.2)',
-		                'rgba(153, 102, 255, 0.2)'
+		                'rgba(65, 93, 67, 0.6)',
+		                'rgba(65, 93, 67, 0.6)',
+		                'rgba(65, 93, 67, 0.6)',
+		                'rgba(65, 93, 67, 0.6)',
+		                'rgba(65, 93, 67, 0.6)'
 		            ],
-		            borderColor: [
-		                'rgba(255, 99, 132, 1)',
-		                'rgba(54, 162, 235, 1)',
-		                'rgba(255, 206, 86, 1)',
-		                'rgba(75, 192, 192, 1)',
-		                'rgba(153, 102, 255, 1)'
-		            ],
-		            borderWidth: 1
+					
+		          
 		        }]
 		    },
-		    options: {
-		        scales: {
-		            y: {
-		                beginAtZero: true
-		            }
-		        }
-		    }
-		});
+		  options: {
+    scales: {
+      x: {
+        ticks: {
+          padding: 2
+        },
+        grid: {
+          drawTicks: true,
+          drawOnChartArea: true
+        },
+        title: {
+          display: true,
+          text: "Continent",
+          font: {
+            size: 10
+          }
+        },
+		
+      },
+      y: {
+        beginAtZero: true,
+        min: 0,
+        max: 8,
+        ticks: {
+          stepSize: 1,
+          callback: function (value, index, ticks) {
+            return " " + value;
+          }
+        },
+        grid: {
+          drawOnChartArea: true
+        },
+        title: {
+          display: true,
+          text: "Happiniess score",
+          font: {
+            size: 15
+          }
+        }
+      }
+    },
+    plugins: {
+      title: {
+        display: true,
+        text: "Happiness",
+        font: {
+          size: 30
+        }
+      },
+      subtitle: {
+        display: true,
+        text: "The level of happiness in different parts of the world in 2022",
+        position: "top",
+        padding: {
+          top: 0,
+          bottom: 15
+        },
+        font: {
+          size: 20,
+		  
+        }
+      },
+      legend: {
+        display: false
+      }
+    }
+  }
+});
 	</script>
 </body>
 </html>
